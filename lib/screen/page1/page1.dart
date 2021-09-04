@@ -88,6 +88,7 @@ class _Page1State extends State<Page1> {
                                     ),
                                     onPressed: () {
                                       FocusScope.of(context).unfocus();
+
                                       if (page1Controller.tSaree.text == '' ||
                                           page1Controller.sButta.text == '' &&
                                               page1Controller.shButta.text ==
@@ -102,51 +103,61 @@ class _Page1State extends State<Page1> {
                                                       .shPaperPrice.text ==
                                                   '') {
                                         print("jenish");
-                                      }
-
-                                      print(page1Controller.bDaimond.value);
-                                      page1Controller.buttaDaimond(
-                                          page1Controller.shDaimond.text,
-                                          page1Controller.shButta.text);
-                                      print(page1Controller.bDaimond.value);
-                                      page1Controller.totalDaimond(
-                                        page1Controller.bDaimond.value,
-                                        page1Controller.sButta.text,
-                                        page1Controller.tSaree.text,
-                                      );
-
-                                      page1Controller.totalDaimondInSaree(
-                                        page1Controller.bDaimond.value,
-                                        page1Controller.sButta.text,
-                                      );
-                                      page1Controller.totalsheet(
-                                          page1Controller.shButta.text,
+                                        Get.snackbar(
+                                          'Enter value',
+                                          'Already all field are empty.',
+                                          icon: Icon(Icons.restore,
+                                              color: Colors.white),
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 15, horizontal: 20),
+                                          margin: EdgeInsets.symmetric(
+                                              vertical: 10, horizontal: 10),
+                                          colorText: Colors.white70,
+                                          backgroundColor: Colors.black38,
+                                        );
+                                      } else {
+                                        page1Controller.buttaDaimond(
+                                            page1Controller.shDaimond.text,
+                                            page1Controller.shButta.text);
+                                        page1Controller.totalDaimond(
+                                          page1Controller.bDaimond.value,
+                                          page1Controller.sButta.text,
                                           page1Controller.tSaree.text,
-                                          page1Controller.sButta.text);
-                                      page1Controller.totalpkg(
-                                        page1Controller.tDaimond.value,
-                                        page1Controller.pkgDaimond.text,
-                                      );
-                                      page1Controller.oneSheetPrice(
-                                        page1Controller.shDaimond.text,
-                                        page1Controller.dprice.text,
-                                        page1Controller.shPaperPrice.text,
-                                      );
-                                      page1Controller.oneSareeSheet(
-                                        page1Controller.shButta.text,
-                                        page1Controller.sButta.text,
-                                      );
-                                      page1Controller.oneSareePrice(
-                                        page1Controller.tDaimondInSaree.value,
-                                        page1Controller.dprice.text,
-                                        page1Controller.sSheet.value,
-                                        page1Controller.shPaperPrice.text,
-                                      );
-                                      page1Controller.totalPrice(
+                                        );
+
+                                        page1Controller.totalDaimondInSaree(
+                                          page1Controller.bDaimond.value,
+                                          page1Controller.sButta.text,
+                                        );
+                                        page1Controller.totalsheet(
+                                            page1Controller.shButta.text,
+                                            page1Controller.tSaree.text,
+                                            page1Controller.sButta.text);
+                                        page1Controller.totalpkg(
                                           page1Controller.tDaimond.value,
+                                          page1Controller.pkgDaimond.text,
+                                        );
+                                        page1Controller.oneSheetPrice(
+                                          page1Controller.shDaimond.text,
                                           page1Controller.dprice.text,
-                                          page1Controller.tSheet.value,
-                                          page1Controller.shPaperPrice.text);
+                                          page1Controller.shPaperPrice.text,
+                                        );
+                                        page1Controller.oneSareeSheet(
+                                          page1Controller.shButta.text,
+                                          page1Controller.sButta.text,
+                                        );
+                                        page1Controller.oneSareePrice(
+                                          page1Controller.tDaimondInSaree.value,
+                                          page1Controller.dprice.text,
+                                          page1Controller.sSheet.value,
+                                          page1Controller.shPaperPrice.text,
+                                        );
+                                        page1Controller.totalPrice(
+                                            page1Controller.tDaimond.value,
+                                            page1Controller.dprice.text,
+                                            page1Controller.tSheet.value,
+                                            page1Controller.shPaperPrice.text);
+                                      }
                                     },
                                     child: Text('Submit'),
                                   ),
